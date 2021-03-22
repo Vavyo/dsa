@@ -8,7 +8,12 @@ namespace Challenges.ArrayChallenges
     {
         public static int[] Reverse(int[] arr)
         {
-            return arr;
+            int[] newArr = new int[arr.Length];
+            for (int i = 0; i < arr.Length; i++)
+            {
+                newArr[i] = arr[arr.Length - 1 - i];
+            }
+            return newArr;
         }
     }
 }
