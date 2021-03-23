@@ -14,4 +14,4 @@ The Big O notation for this should be O(n).
 
 ## Solution
 <!-- Embedded whiteboard image -->
-[Array Reverse](assets/ArrayReverse.png)
+[Array Reverse](../assets/ArrayReverse.png)
