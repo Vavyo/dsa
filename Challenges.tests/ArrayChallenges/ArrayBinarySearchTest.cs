@@ -102,5 +102,51 @@ namespace Challenges.tests.ArrayChallenges
             // assert
             Assert.Equal(5, result);
         }
+        [Fact]
+        public void BinarySearch_Benchmark_small()
+        {
+            int[] arrSmall = new int[100];
+
+            arrSmall[0] = -9;
+
+            int search = -9;
+
+            // act 
+            int resultSmall = ArrayBinarySearch.BinarySearch(arrSmall, search);
+
+            // assert
+            Assert.Equal(0, resultSmall);
+        }
+        [Fact]
+        public void BinarySearch_Benchmark_medium()
+        {
+            int[] arrMedium = new int[10000];
+
+            arrMedium[0] = -9;
+
+            int search = -9;
+
+            // act 
+            int resultMedium = ArrayBinarySearch.BinarySearch(arrMedium, search);
+
+            // assert
+            Assert.Equal(0, resultMedium);
+        }
+        [Fact]
+        public void BinarySearch_Benchmark_Large()
+        {
+            int[] arrLarge = new int[100000];
+
+            arrLarge[0] = -9;
+
+            int search = -9;
+
+            // act 
+            int resultLarge = ArrayBinarySearch.BinarySearch(arrLarge, search);
+
+            // assert
+            Assert.Equal(0, resultLarge);
+        }
+
     }
 }
