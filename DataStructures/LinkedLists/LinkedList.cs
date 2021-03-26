@@ -8,6 +8,11 @@ namespace DataStructures.LinkedLists
 {
     public class LinkedList
     {
-        public object Head { get; set; }
+        public Node Head { get; private set; }
+
+        public void Insert(int value)
+        {
+            Head = new Node(value);
+        }
     }
 }

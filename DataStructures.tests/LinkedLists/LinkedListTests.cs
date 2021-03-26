@@ -8,7 +8,7 @@ using Xunit;
 
 namespace DataStructures.tests.LinkedLists
 {
-    
+
     public class LinkedListTests
     {
         [Fact]
@@ -19,6 +19,20 @@ namespace DataStructures.tests.LinkedLists
 
             // assert
             Assert.Null(list.Head);
+        }
+        [Fact]
+        public void Insert_works_for_empty_list()
+        {
+            //arrange
+            LinkedList list = new LinkedList();
+            int value = 5;
+
+            //act
+            list.Insert(value);
+
+            //assert
+            Assert.NotNull(list);
+            Assert.Equal(value, list.Head.Value);
         }
     }
 }
