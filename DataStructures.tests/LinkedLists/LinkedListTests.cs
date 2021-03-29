@@ -109,5 +109,47 @@ namespace DataStructures.tests.LinkedLists
             string expected = "4,3,2,1";
             Assert.Equal(expected, result);
         }
+        [Fact]
+        public void Append_adds_node_to_end_of_linked_list()
+        {
+            // arrange
+            // act
+            // assert
+        }
+        [Fact]
+        public void Append_adds_node_to_end_of_linked_list_after_having_been_appended()
+        {
+            // arrange
+            // act
+            // assert
+        }
+        [Fact]
+        public void InsertBefore_adds_node_to_linked_list_before_first_node_with_value()
+        {
+            // arrange
+            // act
+            // assert
+        }
+        [Fact]
+        public void InsertBefore_can_add_a_node_before_the_first_node()
+        {
+            // arrange
+            // act
+            // assert
+        }
+        [Fact]
+        public void InsertAfter_can_add_a_node_after_first_occurence_of_value()
+        {
+            // arrange
+            // act
+            // assert
+        }
+        [Fact]
+        public void InsertAfter_can_add_a_node_after_the_last_node()
+        {
+            // arrange
+            // act
+            // assert
+        }
     }
 }
