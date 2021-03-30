@@ -70,20 +70,26 @@ namespace DataStructures.LinkedLists
         {
             Node current = Head;
             Node newNode = new Node(newValue);
+            if( Head == null)
+                throw new ArgumentException("Value not found");
             if (current.Value == valueBefore)
             {
                 newNode.Next = current;
                 Head = newNode;
                 return;
             }
-            while(current.Next.Value != valueBefore)
+            while(current != null)
             {
                 if (current.Next == null)
                     throw new ArgumentException("Value not found");
+                else if (current.Next.Value == valueBefore)
+                {
+                    newNode.Next = current.Next;
+                    current.Next = newNode;
+                    return;
+                }
                 current = current.Next;
             }
-            newNode.Next = current.Next;
-            current.Next = newNode;
         }
 
         public void InsertAfter(int valueAfter, int newValue)
