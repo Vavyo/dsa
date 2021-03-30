@@ -14,8 +14,25 @@ The Big O for time should be O(n) and for space it should be O(n) where n is the
 ## API
 <!-- Description of each method publicly available to your Linked List -->
 - `Insert(int value)`
-  - Adds a new node to the list with the value specified
+  - Adds a new node to the head of the list with the value specified
+  - Big O: time: O(1) space: O(1)
 - `Included(int value)`
   - Returns true if the value is found in the list.
+  - Big O: time: O(n) space: O(1)
 - `ToString()`
   - Returns the values in order, starting from the head, as a CSV.
+  - Big O: time: O(n) space: O(n)
+- `Append(int value)`
+  - Adds a new node with value to the list at the tail.
+  - Big O: time: O(n) space: O(1)
+- `InsertBefore(int valueBefore, int newValue)`
+  - Adds a new node with newValue before the first node with value valueBefore.
+  - Throws `ArgumentException` if valueBefore is not found
+  - Big O: time: O(n) space: O(1)
+- `InsertAfter(int valueAfter, int newValue)`
+  - Adds a new node with newValue after the first node with value valueAfter.
+  - Throws `ArgumentException` if valueAfter is not found
+  - Big O: time: O(n) space: O(1)
+
+
+
