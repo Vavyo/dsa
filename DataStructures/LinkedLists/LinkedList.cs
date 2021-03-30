@@ -46,13 +46,24 @@ namespace DataStructures.LinkedLists
         }
         public void Append(int value)
         {
-            Node current = Head;
-            Node newNode = new Node(value);
-            while(!(current.Next is null))
+            
+            if (Head == null)
             {
+                Insert(value);
+                return;
+            }
+            Node newNode = new Node(value);
+            Node current = Head;
+
+            while (current != null)
+            {
+                if (current.Next == null)
+                {
+                    current.Next = newNode;
+                    break;
+                }
                 current = current.Next;
             }
-            current.Next = newNode;
         }
 
         public void InsertBefore(int valueBefore, int newValue)
