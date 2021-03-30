@@ -9,45 +9,87 @@ namespace DataStructures.LinkedLists
     public class LinkedList
     {
         public Node Head { get; private set; }
-        public Node Current { get; set; }
 
         public void Insert(int value)
         {
-            Head = new Node(value);
-            Head.Next = Current;
-            Current = Head;
+            Node newNode = new Node(value);
+            newNode.Next = Head;
+            Head = newNode;
         }
-        public string ToString()
+        public override string ToString()
         {
-            Current = Head;
+            Node current = Head;
             string result = "";
-            if (Current is null)
-                return null;
-            do
+            while (current != null)
             {
-                result += Current.Value;
-                if(Current.Next is null)
-                    break;
-                result += ",";
-                Current = Current.Next;
+                result += $"{current.Value},";
+                current = current.Next;
+            }
+            result += "NULL";
 
-            } while (true);
             return result;
         }
         public bool Includes(int value)
         {
-            Current = Head;
-            if(Current is null)
+            Node current = Head;
+            if(current is null)
                 return false;
             do
             {
-                if(Current.Value == value)
+                if(current.Value == value)
                     return true;
-                else if (Current.Next is null)
+                else if (current.Next is null)
                     return false;
                 else
-                    Current = Current.Next;
+                    current = current.Next;
             } while (true);
+        }
+        public void Append(int value)
+        {
+            Node current = Head;
+            Node newNode = new Node(value);
+            while(!(current.Next is null))
+            {
+                current = current.Next;
+            }
+            current.Next = newNode;
+        }
+
+        public void InsertBefore(int valueBefore, int newValue)
+        {
+            Node current = Head;
+            Node newNode = new Node(newValue);
+            if (current.Value == valueBefore)
+            {
+                newNode.Next = current;
+                Head = newNode;
+                return;
+            }
+            while(current.Next.Value != valueBefore)
+            {
+                if (current.Next == null)
+                    throw new ArgumentException("Value not found");
+                current = current.Next;
+            }
+            newNode.Next = current.Next;
+            current.Next = newNode;
+        }
+
+        public void InsertAfter(int valueAfter, int newValue)
+        {
+            Node current = Head;
+            Node newNode = new Node(newValue);
+            while (current != null)
+            {
+                if (current.Value == valueAfter)
+                {
+                    newNode.Next = current.Next;
+                    current.Next = newNode;
+                    return;
+                }
+                current = current.Next;
+            }
+            throw new ArgumentException("Value not found");
         }
     }
 }

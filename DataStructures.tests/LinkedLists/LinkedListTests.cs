@@ -76,7 +76,8 @@ namespace DataStructures.tests.LinkedLists
             string result = list.ToString();
 
             // assert
-            Assert.Null(result);
+            string expected = "NULL";
+            Assert.Equal(expected, result);
         }
         [Fact]
         public void ToString_returns_one_value_with_single_node_list()
@@ -89,7 +90,7 @@ namespace DataStructures.tests.LinkedLists
             string result = list.ToString();
 
             // assert
-            string expected = "6";
+            string expected = "6,NULL";
             Assert.Equal(expected, result);
         }
         [Fact]
@@ -106,50 +107,101 @@ namespace DataStructures.tests.LinkedLists
             string result = list.ToString();
 
             // assert
-            string expected = "4,3,2,1";
+            string expected = "4,3,2,1,NULL";
             Assert.Equal(expected, result);
         }
         [Fact]
         public void Append_adds_node_to_end_of_linked_list()
         {
             // arrange
+            LinkedList list = new LinkedList();
+            list.Insert(3);
+            list.Insert(2);
+            list.Insert(1);
+
             // act
+            list.Append(4);
+
             // assert
+            string result = list.ToString();
+            string expected = "1,2,3,4,NULL";
+            Assert.Equal(expected, result);
+            
         }
         [Fact]
         public void Append_adds_node_to_end_of_linked_list_after_having_been_appended()
         {
             // arrange
+            LinkedList list = new LinkedList();
+            list.Insert(3);
+            list.Insert(2);
+            list.Insert(1);
+
             // act
+            list.Append(4);
+            list.Append(5);
+
             // assert
+            string result = list.ToString();
+            string expected = "1,2,3,4,5,NULL";
+            Assert.Equal(expected, result);
         }
         [Fact]
         public void InsertBefore_adds_node_to_linked_list_before_first_node_with_value()
         {
             // arrange
+            LinkedList list = new LinkedList();
+            list.Insert(3);
+            list.Insert(3);
+            list.Insert(2);
+            list.Insert(1);
             // act
+            list.InsertBefore(3, 5);
             // assert
+            string result = list.ToString();
+            string expected = "1,2,5,3,3,NULL";
+            Assert.Equal(expected, result);
         }
         [Fact]
         public void InsertBefore_can_add_a_node_before_the_first_node()
         {
             // arrange
+            LinkedList list = new LinkedList();
+            list.Insert(1);
             // act
+            list.InsertBefore(1, 5);
             // assert
+            string result = list.ToString();
+            string expected = "5,1,NULL";
+            Assert.Equal(expected, result);
         }
         [Fact]
         public void InsertAfter_can_add_a_node_after_first_occurence_of_value()
         {
-            // arrange
+            LinkedList list = new LinkedList();
+            list.Insert(4);
+            list.Insert(2);
+            list.Insert(2);
+            list.Insert(1);
             // act
+            list.InsertAfter(2, 5);
             // assert
+            string result = list.ToString();
+            string expected = "1,2,5,2,4,NULL";
+            Assert.Equal(expected, result);
         }
         [Fact]
         public void InsertAfter_can_add_a_node_after_the_last_node()
         {
             // arrange
+            LinkedList list = new LinkedList();
+            list.Insert(1);
             // act
+            list.InsertAfter(1, 5);
             // assert
+            string result = list.ToString();
+            string expected = "1,5,NULL";
+            Assert.Equal(expected, result);
         }
     }
 }
