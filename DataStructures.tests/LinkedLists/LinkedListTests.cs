@@ -203,5 +203,83 @@ namespace DataStructures.tests.LinkedLists
             string expected = "1,5,NULL";
             Assert.Equal(expected, result);
         }
+        [Fact]
+        public void kthFromEnd_returns_correct_value_for_valid_args_on_list_greater_than_1()
+        {
+            // arrange
+            LinkedList list = new LinkedList();
+            list.Insert(5);
+            list.Insert(4);
+            list.Insert(3);
+            list.Insert(2);
+            // act
+            int result = list.kthFromEnd(2);
+            // assert
+            int expected = 3;
+            Assert.Equal(expected, result);
+        }
+        [Fact]
+        public void kthFromEnd_returns_correct_value_for_valid_args_on_list_size_1()
+        {
+            // arrange
+            LinkedList list = new LinkedList();
+            list.Insert(5);
+            // act
+            int result = list.kthFromEnd(0);
+            // assert
+            int expected = 5;
+            Assert.Equal(expected, result);
+        }
+        [Fact]
+        public void kthFromEnd_throws_argument_exception_when_k_larger_than_list_size()
+        {
+            // arrange
+            LinkedList list = new LinkedList();
+            list.Insert(5);
+            list.Insert(4);
+            list.Insert(3);
+            list.Insert(2);
+            // act
+            // assert
+            Assert.Throws<ArgumentException>(() => list.kthFromEnd(4));
+        }
+        [Fact]
+        public void kthFromEnd_throws_argument_exception_when_list_is_null()
+        {
+            // arrange
+            LinkedList list = new LinkedList();
+            // act
+            // assert
+            Assert.Throws<ArgumentException>(() => list.kthFromEnd(4));
+        }
+        [Fact]
+        public void kthFromEnd_returns_correct_value_when_k_is_list_size()
+        {
+            // arrange
+            LinkedList list = new LinkedList();
+            list.Insert(5);
+            list.Insert(4);
+            list.Insert(3);
+            list.Insert(2);
+            // act
+            int result = list.kthFromEnd(3);
+            // assert
+            int expected = 2;
+            Assert.Equal(expected, result);
+        }
+        [Fact]
+        public void kthFromEnd_throws_argument_exception_when_k_is_negative()
+        {
+            // arrange
+            LinkedList list = new LinkedList();
+            list.Insert(5);
+            list.Insert(4);
+            list.Insert(3);
+            list.Insert(2);
+            // act
+            // assert
+            Assert.Throws<ArgumentException>(() => list.kthFromEnd(-4));
+        }
+
     }
 }

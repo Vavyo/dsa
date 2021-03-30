@@ -108,5 +108,10 @@ namespace DataStructures.LinkedLists
             }
             throw new ArgumentException("Value not found");
         }
+
+        public int kthFromEnd(int v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
