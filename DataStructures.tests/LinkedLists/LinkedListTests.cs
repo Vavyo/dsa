@@ -213,7 +213,7 @@ namespace DataStructures.tests.LinkedLists
             list.Insert(3);
             list.Insert(2);
             // act
-            int result = list.kthFromEnd(2);
+            int result = list.KthFromEnd(2);
             // assert
             int expected = 3;
             Assert.Equal(expected, result);
@@ -225,7 +225,7 @@ namespace DataStructures.tests.LinkedLists
             LinkedList list = new LinkedList();
             list.Insert(5);
             // act
-            int result = list.kthFromEnd(0);
+            int result = list.KthFromEnd(0);
             // assert
             int expected = 5;
             Assert.Equal(expected, result);
@@ -241,7 +241,7 @@ namespace DataStructures.tests.LinkedLists
             list.Insert(2);
             // act
             // assert
-            Assert.Throws<ArgumentException>(() => list.kthFromEnd(4));
+            Assert.Throws<ArgumentException>(() => list.KthFromEnd(4));
         }
         [Fact]
         public void kthFromEnd_throws_argument_exception_when_list_is_null()
@@ -250,7 +250,7 @@ namespace DataStructures.tests.LinkedLists
             LinkedList list = new LinkedList();
             // act
             // assert
-            Assert.Throws<ArgumentException>(() => list.kthFromEnd(4));
+            Assert.Throws<ArgumentException>(() => list.KthFromEnd(4));
         }
         [Fact]
         public void kthFromEnd_returns_correct_value_when_k_is_list_size()
@@ -262,7 +262,7 @@ namespace DataStructures.tests.LinkedLists
             list.Insert(3);
             list.Insert(2);
             // act
-            int result = list.kthFromEnd(3);
+            int result = list.KthFromEnd(3);
             // assert
             int expected = 2;
             Assert.Equal(expected, result);
@@ -278,7 +278,7 @@ namespace DataStructures.tests.LinkedLists
             list.Insert(2);
             // act
             // assert
-            Assert.Throws<ArgumentException>(() => list.kthFromEnd(-4));
+            Assert.Throws<ArgumentException>(() => list.KthFromEnd(-4));
         }
 
     }
