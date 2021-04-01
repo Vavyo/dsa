@@ -16,10 +16,20 @@ namespace Challenges.LinkedListChallenges
 
             Node current1 = list1.Head;
             Node current2 = list2.Head;
+            Node tempHead;
 
-            while(current1 != null)
+            while(current1 != null && current2 != null)
             {
-                current1 = current1.Next;
+                tempHead = current2.Next;
+                current2.Next = current1.Next;
+                current1.Next = current2;
+                if (current2.Next == null)
+                {
+                    current2.Next = tempHead;
+                    break;
+                }
+                current1 = current2.Next;
+                current2 = tempHead;
             }
             return list1;
         }
