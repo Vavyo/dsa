@@ -44,8 +44,8 @@ namespace Challenges.tests.LinkedListChallenges
             // arrange
             LinkedList list1 = new LinkedList();
             LinkedList list2 = new LinkedList();
+            list1.Insert(7);
             list1.Insert(5);
-            list1.Insert(4);
             list1.Insert(3);
             list1.Insert(1);
             list2.Insert(8);
