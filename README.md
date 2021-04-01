@@ -6,3 +6,4 @@
 - [Array Insert README](Challenges/ArrayShift/README.md)
 - [Array Binary Search README](Challenges/ArrayBinarySearch/README.md)
 - [Linked Lists](DataStructures\LinkedLists\README.md)
+- [LinkedList Zip](Challenges\LLZip\README.md)
