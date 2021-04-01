@@ -33,6 +33,9 @@ The Big O for time should be O(n) and for space it should be O(n) where n is the
   - Adds a new node with newValue after the first node with value valueAfter.
   - Throws `ArgumentException` if valueAfter is not found
   - Big O: time: O(n) space: O(1)
-
+- `KthFromEnd(int k)`
+  - Returns value of the node k from the end of the list.
+  - Throws `ArgumentException` if k is negative, if k is larger than the list, and if the list is null.
+  - Big O: time: O(n) space: O(1)
 
 
