@@ -61,5 +61,26 @@ namespace Challenges.tests.LinkedListChallenges
             Assert.Equal(expected, result.ToString());
 
         }
+        [Fact]
+        public void ZipLists_for_list1_larger_than_list2()
+        {
+            // arrange
+            LinkedList list1 = new LinkedList();
+            LinkedList list2 = new LinkedList();
+            list1.Insert(7);
+            list1.Insert(5);
+            list1.Insert(3);
+            list1.Insert(1);
+            list2.Insert(4);
+            list2.Insert(2);
+
+            // act
+            LinkedList result = LLZip.ZipLists(list1, list2);
+
+            // assert
+            string expected = "1,2,3,4,5,7,NULL";
+            Assert.Equal(expected, result.ToString());
+
+        }
     }
 }
