@@ -38,5 +38,28 @@ namespace Challenges.tests.LinkedListChallenges
             Assert.Equal(list1, result);
 
         }
+        [Fact]
+        public void ZipLists_happy_path_returns_expected()
+        {
+            // arrange
+            LinkedList list1 = new LinkedList();
+            LinkedList list2 = new LinkedList();
+            list1.Insert(5);
+            list1.Insert(4);
+            list1.Insert(3);
+            list1.Insert(1);
+            list2.Insert(8);
+            list2.Insert(6);
+            list2.Insert(4);
+            list2.Insert(2);
+
+            // act
+            LinkedList result = LLZip.ZipLists(list1, list2);
+
+            // assert
+            string expected = "1,2,3,4,5,6,7,8,NULL";
+            Assert.Equal(expected, result.ToString());
+
+        }
     }
 }
