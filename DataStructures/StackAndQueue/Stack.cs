@@ -20,5 +20,15 @@ namespace DataStructures.StackAndQueue
         {
             throw new NotImplementedException();
         }
+
+        public T Pop()
+        {
+            throw new NotImplementedException();
+        }
+
+        public T Peek()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
