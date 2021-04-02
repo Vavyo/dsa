@@ -8,39 +8,69 @@ namespace DataStructures.StackAndQueue
     public class StackTests
     {
         [Fact]
-        public void Top_is_null_on_stack_creation()
+        public void Stack_is_empty_on_creation()
         {
             // arrange
+            Stack<int> stack = new Stack<int>();
             // act
             // assert
+            Assert.True(stack.isEmpty());
         }
         [Fact]
         public void Push_adds_top_to_value()
         {
             // arrange
+            Stack<int> stack = new Stack<int>();
             // act
+            stack.Push(1);
             // assert
+            Assert.False(stack.isEmpty());
         }
         [Fact]
         public void Push_works_multiple_times()
         {
             // arrange
+            Stack<int> stack = new Stack<int>();
             // act
+            stack.Push(1);
+            stack.Push(1);
+            stack.Push(1);
+            stack.Push(1);
             // assert
+            Assert.False(stack.isEmpty());
         }
         [Fact]
         public void Pop_returns_node_value()
         {
             // arrange
+            Stack<int> stack = new Stack<int>();
+            stack.Push(1);
+            stack.Push(2);
+            stack.Push(3);
             // act
+            int result = stack.Pop();
             // assert
+            Assert.Equal(3, result);
+            // act
+            result = stack.Pop();
+            // assert
+            Assert.Equal(2, result);
         }
         [Fact]
         public void Pop_can_empty_stack()
         {
             // arrange
+            Stack<int> stack = new Stack<int>();
+            stack.Push(1);
+            stack.Push(2);
+            stack.Push(3);
+            Assert.False(stack.isEmpty());
             // act
+            stack.Pop();
+            stack.Pop();
+            stack.Pop();
             // assert
+            Assert.True(stack.isEmpty());
         }
         [Fact]
         public void Peek_returns_next_value_on_the_stack()
