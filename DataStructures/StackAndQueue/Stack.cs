@@ -14,6 +14,7 @@ namespace DataStructures.StackAndQueue
         public void Push(T value)
         {
             Node<T> node = new Node<T>(value);
+            node.Next = Top;
             Top = node;
         }
 
@@ -25,7 +26,7 @@ namespace DataStructures.StackAndQueue
         public T Pop()
         {
             T result = Top.Value;
-            
+            Top = Top.Next;
             return result;
         }
 
