@@ -90,8 +90,11 @@ namespace DataStructures.StackAndQueue
         public void Pop_or_Peek_on_empty_stack_throws_exception()
         {
             // arrange
+            Stack<int> stack = new Stack<int>();
             // act
             // assert
+            Assert.Throws<NullReferenceException>(() => stack.Pop());
+            Assert.Throws<NullReferenceException>(() => stack.Peek());
         }
     }
 }
