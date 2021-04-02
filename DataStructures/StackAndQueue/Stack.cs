@@ -6,11 +6,19 @@ namespace DataStructures.StackAndQueue
 {
     public class Stack<T>
     {
-        public Node<T> Top { get; private set; }
+        private Node<T> Top { get; set; }
         public Stack()
         {
             Top = null;
         }
+        public void Push(T value)
+        {
+            Node<T> node = new Node<T>(value);
+        }
 
+        public bool isEmpty()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

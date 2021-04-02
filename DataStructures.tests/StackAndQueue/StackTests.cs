@@ -76,8 +76,15 @@ namespace DataStructures.StackAndQueue
         public void Peek_returns_next_value_on_the_stack()
         {
             // arrange
+            Stack<int> stack = new Stack<int>();
+            stack.Push(1);
+            stack.Push(2);
+            stack.Push(3);
             // act
+            stack.Peek();
+            int result = stack.Peek();
             // assert
+            Assert.Equal(3, result);
         }
         [Fact]
         public void Pop_or_Peek_on_empty_stack_throws_exception()
