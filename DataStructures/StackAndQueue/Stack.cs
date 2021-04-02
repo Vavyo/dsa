@@ -14,21 +14,24 @@ namespace DataStructures.StackAndQueue
         public void Push(T value)
         {
             Node<T> node = new Node<T>(value);
+            Top = node;
         }
 
         public bool isEmpty()
         {
-            throw new NotImplementedException();
+            return Top == null;
         }
 
         public T Pop()
         {
-            throw new NotImplementedException();
+            T result = Top.Value;
+            
+            return result;
         }
 
         public T Peek()
         {
-            throw new NotImplementedException();
+            return Top.Value;
         }
     }
 }
