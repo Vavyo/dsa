@@ -11,11 +11,11 @@ namespace DataStructures.StackAndQueue
         {
             throw new NotImplementedException();
         }
-        public void Dequeue()
+        public T Dequeue()
         {
             throw new NotImplementedException();
         }
-        public void Peek()
+        public T Peek()
         {
             throw new NotImplementedException();
         }
