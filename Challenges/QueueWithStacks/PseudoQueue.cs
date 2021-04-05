@@ -9,21 +9,47 @@ namespace Challenges.StackAndQueueChallenges
     {
         private DataStructures.StackAndQueue.Stack<T> storage = new DataStructures.StackAndQueue.Stack<T>();
         private DataStructures.StackAndQueue.Stack<T> offLoad = new DataStructures.StackAndQueue.Stack<T>();
-        public bool IsEmpty => throw new NotImplementedException();
+        public bool IsEmpty => storage.IsEmpty && offLoad.IsEmpty;
 
         public T Dequeue()
         {
-            throw new NotImplementedException();
+            SwapStorage(false);
+            return offLoad.Pop();
         }
 
         public void Enqueue(T value)
         {
-            throw new NotImplementedException();
+            SwapStorage(true);
+            storage.Push(value);
         }
 
         public T Peek()
         {
-            throw new NotImplementedException();
+            SwapStorage(false);
+            return offLoad.Peek();
         }
+        private void SwapStorage(bool setToInput)
+        {
+            if (IsEmpty)
+                return;
+            if (setToInput)
+            {
+                if (storage.IsEmpty)
+                {
+                    while (!offLoad.IsEmpty)
+                        storage.Push(offLoad.Pop());
+                }
+            }
+            else
+            {
+                if (offLoad.IsEmpty)
+                {
+                    while (!storage.IsEmpty)
+                        offLoad.Push(storage.Pop());
+                }
+            }
+        }
+
+
     }
 }

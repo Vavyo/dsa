@@ -56,11 +56,7 @@ namespace Challenges.tests.QueueAndStackChallenges
             // act
             result = queue.Peek();
             // assert
-            Assert.Equal(4, result);
-            // act
-            result = queue.Peek();
-            // assert
-            Assert.Equal(4, result);
+            Assert.Equal(1, result);
         }
     }
 }
