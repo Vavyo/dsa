@@ -45,25 +45,22 @@ namespace Challenges.tests.QueueAndStackChallenges
         {
             // arrange
             PseudoQueue<int> queue = new PseudoQueue<int>();
+            queue.Enqueue(1);
             // act
+            int result = queue.Peek();
             // assert
-        }
-        [Fact]
-        public void Dequeue_and_Peek_dont_break_IsEmpty()
-        {
+            Assert.False(queue.IsEmpty);
+            Assert.Equal(1, result);
             // arrange
-            PseudoQueue<int> queue = new PseudoQueue<int>();
+            queue.Enqueue(4);
             // act
+            result = queue.Peek();
             // assert
-        }
-        [Fact]
-        public void Enqueue_works_after_Dequeue()
-        {
-            // arrange
-            PseudoQueue<int> queue = new PseudoQueue<int>();
+            Assert.Equal(4, result);
             // act
+            result = queue.Peek();
             // assert
+            Assert.Equal(4, result);
         }
-
     }
 }
