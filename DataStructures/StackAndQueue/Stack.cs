@@ -4,9 +4,12 @@ using System.Text;
 
 namespace DataStructures.StackAndQueue
 {
-    public class Stack<T>
+    public class Stack<T> : IStack<T>
     {
         private Node<T> Top { get; set; }
+
+        public bool IsEmpty => Top == null;
+
         public Stack()
         {
             Top = null;
@@ -16,11 +19,6 @@ namespace DataStructures.StackAndQueue
             Node<T> node = new Node<T>(value);
             node.Next = Top;
             Top = node;
-        }
-
-        public bool isEmpty()
-        {
-            return Top == null;
         }
 
         public T Pop()

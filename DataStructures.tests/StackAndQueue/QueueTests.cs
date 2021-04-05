@@ -27,7 +27,7 @@ namespace DataStructures.StackAndQueue
             queue.Enqueue(3);
             queue.Enqueue(4);
             // assert
-            Assert.False(queue.isEmpty());
+            Assert.False(queue.IsEmpty);
         }
         [Fact]
         public void Dequeue_works_for_correct_value()
@@ -77,7 +77,7 @@ namespace DataStructures.StackAndQueue
             queue.Dequeue();
             queue.Dequeue();
             // assert
-            Assert.True(queue.isEmpty());
+            Assert.True(queue.IsEmpty);
         }
         [Fact]
         public void Can_instantiate_an_empty_queue()
@@ -86,7 +86,7 @@ namespace DataStructures.StackAndQueue
             Queue<int> queue = new Queue<int>();
             // act
             // assert
-            Assert.True(queue.isEmpty());
+            Assert.True(queue.IsEmpty);
         }
         [Fact]
         public void Dequeue_or_Peek_on_and_empty_queue_throws_exception()
