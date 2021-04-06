@@ -15,4 +15,4 @@ Use a helper method to reduce time on repeated method calls.
 
 ## Solution
 <!-- Embedded whiteboard image -->
-![Whiteboard](..\assets\Class11DSA.PNG)
+![Whiteboard](../assets/Class11DSA.PNG)
