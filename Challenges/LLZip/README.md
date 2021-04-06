@@ -14,4 +14,4 @@ Big O notation: space: O(1) time: O(n)
 
 ## Solution
 <!-- Embedded whiteboard image -->
-[LinkedList Zip](../assets/LLZip.jpeg)
+![LinkedList Zip](../assets/LLZip.jpeg)

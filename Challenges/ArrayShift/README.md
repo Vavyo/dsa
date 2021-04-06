@@ -14,4 +14,4 @@ The Big O notation for this should be O(n).
 
 ## Solution
 <!-- Embedded whiteboard image -->
-[Insert to Array](../assets/ArrayInsert.jpeg)
+![Insert to Array](../assets/ArrayInsert.jpeg)

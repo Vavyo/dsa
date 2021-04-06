@@ -18,4 +18,4 @@ The Big O notation would be O(n).
 
 ## Solution
 <!-- Embedded whiteboard image -->
-[Binary Search](../assets/ArrayBinarySearch.jpeg)
+![Binary Search](../assets/ArrayBinarySearch.jpeg)
