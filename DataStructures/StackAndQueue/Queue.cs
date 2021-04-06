@@ -4,10 +4,12 @@ using System.Text;
 
 namespace DataStructures.StackAndQueue
 {
-    public class Queue<T>
+    public class Queue<T> : IQueue<T>
     {
         private Node<T> Front { get; set; }
         private Node<T> End { get; set; } // don't know how you would enqueue with O(1) without this
+        public bool IsEmpty => Front == null;
+
         public void Enqueue(T value)
         {
             Node<T> node = new Node<T>(value);
@@ -28,13 +30,6 @@ namespace DataStructures.StackAndQueue
         public T Peek()
         {
             return Front.Value;
-        }
-        public bool isEmpty()
-        {
-            if (Front == null)
-                return true;
-            else
-                return false;
         }
     }
 }

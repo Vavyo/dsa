@@ -14,7 +14,7 @@ namespace DataStructures.StackAndQueue
             Stack<int> stack = new Stack<int>();
             // act
             // assert
-            Assert.True(stack.isEmpty());
+            Assert.True(stack.IsEmpty);
         }
         [Fact]
         public void Push_adds_top_to_value()
@@ -24,7 +24,7 @@ namespace DataStructures.StackAndQueue
             // act
             stack.Push(1);
             // assert
-            Assert.False(stack.isEmpty());
+            Assert.False(stack.IsEmpty);
         }
         [Fact]
         public void Push_works_multiple_times()
@@ -37,7 +37,7 @@ namespace DataStructures.StackAndQueue
             stack.Push(1);
             stack.Push(1);
             // assert
-            Assert.False(stack.isEmpty());
+            Assert.False(stack.IsEmpty);
         }
         [Fact]
         public void Pop_returns_node_value()
@@ -64,13 +64,13 @@ namespace DataStructures.StackAndQueue
             stack.Push(1);
             stack.Push(2);
             stack.Push(3);
-            Assert.False(stack.isEmpty());
+            Assert.False(stack.IsEmpty);
             // act
             stack.Pop();
             stack.Pop();
             stack.Pop();
             // assert
-            Assert.True(stack.isEmpty());
+            Assert.True(stack.IsEmpty);
         }
         [Fact]
         public void Peek_returns_next_value_on_the_stack()
