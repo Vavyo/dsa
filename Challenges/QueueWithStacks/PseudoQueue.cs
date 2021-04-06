@@ -7,45 +7,45 @@ namespace Challenges.StackAndQueueChallenges
 {
     public class PseudoQueue<T> : IQueue<T>
     {
-        private DataStructures.StackAndQueue.Stack<T> storage = new DataStructures.StackAndQueue.Stack<T>();
-        private DataStructures.StackAndQueue.Stack<T> offLoad = new DataStructures.StackAndQueue.Stack<T>();
-        public bool IsEmpty => storage.IsEmpty && offLoad.IsEmpty;
+        private DataStructures.StackAndQueue.Stack<T> Storage = new DataStructures.StackAndQueue.Stack<T>();
+        private DataStructures.StackAndQueue.Stack<T> Reverse = new DataStructures.StackAndQueue.Stack<T>();
+        public bool IsEmpty => Storage.IsEmpty && Reverse.IsEmpty;
 
         public T Dequeue()
         {
-            SwapStorage(false);
-            return offLoad.Pop();
+            ReverseStorage(false);
+            return Reverse.Pop();
         }
 
         public void Enqueue(T value)
         {
-            SwapStorage(true);
-            storage.Push(value);
+            ReverseStorage(true);
+            Storage.Push(value);
         }
 
         public T Peek()
         {
-            SwapStorage(false);
-            return offLoad.Peek();
+            ReverseStorage(false);
+            return Reverse.Peek();
         }
-        private void SwapStorage(bool setToInput)
+        private void ReverseStorage(bool setToInput)
         {
             if (IsEmpty)
                 return;
-            if (setToInput)
+            if (setToInput) // set true for enqueue
             {
-                if (storage.IsEmpty)
+                if (Storage.IsEmpty)
                 {
-                    while (!offLoad.IsEmpty)
-                        storage.Push(offLoad.Pop());
+                    while (!Reverse.IsEmpty)
+                        Storage.Push(Reverse.Pop());
                 }
             }
-            else
+            else // 
             {
-                if (offLoad.IsEmpty)
+                if (Reverse.IsEmpty)
                 {
-                    while (!storage.IsEmpty)
-                        offLoad.Push(storage.Pop());
+                    while (!Storage.IsEmpty)
+                        Reverse.Push(Storage.Pop());
                 }
             }
         }

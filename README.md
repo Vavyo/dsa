@@ -8,3 +8,4 @@
 - [Linked Lists](DataStructures\LinkedLists\README.md)
 - [LinkedList Zip](Challenges\LLZip\README.md)
 - [Stack and Queue](DataStructures\StackAndQueue\README.md)
+- [Stack with Queue](Challenges\assets\Class11DSA.PNG)
