@@ -16,5 +16,21 @@ namespace Challenges.tests.QueueAndStackChallenges
             // act
             // assert
         }
+        [Fact]
+        public void Can_store_and_retrieve_dogs()
+        {
+            // arrange
+            FIFOAnimalShelter shelter = new FIFOAnimalShelter();
+            // act
+            // assert
+        }
+        [Fact]
+        public void Dequeue_returns_null_object_when_param_is_invalid()
+        {
+            // arrange
+            FIFOAnimalShelter shelter = new FIFOAnimalShelter();
+            // act
+            // assert
+        }
     }
 }
