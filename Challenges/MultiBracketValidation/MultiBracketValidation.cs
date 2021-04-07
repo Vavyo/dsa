@@ -6,7 +6,7 @@ namespace Challenges.StackAndQueueChallenges
 {
     public class MultiBracketValidation
     {
-        private static bool CheckBracketBalance(string input)
+        public static bool CheckBracketBalance(string input)
         {
             throw new NotImplementedException();
         }

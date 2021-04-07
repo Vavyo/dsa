@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Challenges.StackAndQueueChallenges;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using Xunit;
@@ -11,8 +12,11 @@ namespace Challenges.tests.QueueAndStackChallenges
         public void CheckBracketBalance_returns_false_for_an_empty_string()
         {
             // arrange
+            string input = "";
             // act
+            bool result = MultiBracketValidation.CheckBracketBalance(input);
             // assert
+            Assert.False(result);
         }
         [Fact]
         public void CheckBracketBalance_returns_false_for_a_single_character_string()
