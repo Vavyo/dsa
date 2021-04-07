@@ -14,7 +14,11 @@ namespace Challenges.tests.QueueAndStackChallenges
             // arrange
             FIFOAnimalShelter shelter = new FIFOAnimalShelter();
             // act
+            Cat expected = new Cat("sam");
+            shelter.Enqueue(expected);
+            Cat result = (Cat)shelter.Dequeue("cat");
             // assert
+            Assert.Equal(expected, result);
         }
         [Fact]
         public void Can_store_and_retrieve_dogs()
@@ -22,7 +26,11 @@ namespace Challenges.tests.QueueAndStackChallenges
             // arrange
             FIFOAnimalShelter shelter = new FIFOAnimalShelter();
             // act
+            Dog expected = new Dog("Doug");
+            shelter.Enqueue(expected);
+            Dog result = (Dog)shelter.Dequeue("dog");
             // assert
+            Assert.Equal(expected, result);
         }
         [Fact]
         public void Dequeue_returns_null_object_when_param_is_invalid()
@@ -30,7 +38,11 @@ namespace Challenges.tests.QueueAndStackChallenges
             // arrange
             FIFOAnimalShelter shelter = new FIFOAnimalShelter();
             // act
+            Cat expected = new Cat("sam");
+            shelter.Enqueue(expected);
+            Cat result = (Cat)shelter.Dequeue("parrot");
             // assert
+            Assert.Null(result);
         }
     }
 }
