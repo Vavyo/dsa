@@ -9,7 +9,7 @@ namespace Challenges.StackAndQueueChallenges
         public static bool CheckBracketBalance(string input)
         {
             Stack<char> stack = new Stack<char>();
-            bool containsBracket = false;
+            bool containsBracket = false; // make sure the input has brackets
 
             foreach(char c in input)
             {
@@ -29,23 +29,20 @@ namespace Challenges.StackAndQueueChallenges
                         containsBracket = true;
                         break;
                     case '}':
-                        if (!stack.TryPop(out char o ) || o != '{')
+                        if (!stack.TryPop(out char o ) || o != '{') // define o then run the check
                             return false;
                         break;
                     case ']':
-                        // if (stack.Pop() != '[')
-                        if (!stack.TryPop(out o) || o != '[')
+                        if (!stack.TryPop(out o) || o != '[') // if try pop failed or pop result isnt equal to partner bracket
                             return false;
                         break;
                     case ')':
                         if (!stack.TryPop(out o) || o != '(')
                             return false;
                         break;
-                    default:
-                        break;
                 }
             }
-            if (stack.Count != 0 || !containsBracket)
+            if (stack.Count != 0 || !containsBracket) // if there are left over brackets or it didn't contain brackets
                 return false;
             return true;
         }
