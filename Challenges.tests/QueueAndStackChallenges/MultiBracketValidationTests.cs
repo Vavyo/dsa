@@ -82,8 +82,11 @@ namespace Challenges.tests.QueueAndStackChallenges
         public void CheckBracketBalance_returns_true_for_balanced_brackets()
         {
             // arrange
+            string input = "{([])}";
             // act
+            bool result = MultiBracketValidation.CheckBracketBalance(input);
             // assert
+            Assert.True(result);
         }
         [Fact]
         public void CheckBracketBalance_returns_true_for_balanced_brackets_with_words()
