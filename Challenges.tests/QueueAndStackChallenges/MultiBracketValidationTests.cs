@@ -52,8 +52,11 @@ namespace Challenges.tests.QueueAndStackChallenges
         public void CheckBracketBalance_returns_false_for_an_uneven_number_of_brackets()
         {
             // arrange
+            string input = "{{}";
             // act
+            bool result = MultiBracketValidation.CheckBracketBalance(input);
             // assert
+            Assert.False(result);
         }
         [Fact]
         public void CheckBracketBalance_returns_false_for_a_string_of_only_opening_brackets()
