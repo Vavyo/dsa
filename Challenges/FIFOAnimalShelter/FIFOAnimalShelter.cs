@@ -10,15 +10,23 @@ namespace Challenges.StackAndQueueChallenges
         private Queue<Dog> dogStorage = new Queue<Dog>();
         public void Enqueue(Cat cat)
         {
-            throw new NotImplementedException();
+            catStorage.Enqueue(cat);
         }
         public void Enqueue(Dog dog)
         {
-            throw new NotImplementedException();
+            dogStorage.Enqueue(dog);
         }
         public Object Dequeue(string param)
         {
-            throw new NotImplementedException();
+            if(param == "cat")
+            {
+                return catStorage.Dequeue();
+            }
+            else if (param == "dog")
+            {
+                return dogStorage.Dequeue();
+            }
+            return null;
         }
     }
 }
