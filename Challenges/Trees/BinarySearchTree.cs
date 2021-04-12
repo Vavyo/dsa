@@ -4,7 +4,8 @@ using System.Text;
 
 namespace Challenges.Trees
 {
-    class BinarySearchTree
+    public class BinarySearchTree<T>
     {
+        private Node<T> head { get; set; }
     }
 }
