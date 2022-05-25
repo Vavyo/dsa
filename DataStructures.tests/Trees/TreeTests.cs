@@ -15,6 +15,35 @@ namespace DataStructures.tests.Trees
             Tree<int> tree = new Tree<int>();
             // Assert
             Assert.NotNull(tree);
+            Assert.Null(tree.Root);
+        }
+        [Fact]
+        public void Can_add_to_root()
+        {
+            // Arrange
+            // Act
+            // Assert
+        }
+        [Fact]
+        public void Can_instanciate_with_root()
+        {
+            // Arrange
+            // Act
+            // Assert
+        }
+        [Fact]
+        public void Can_add_to_existing_node()
+        {
+            // Arrange
+            // Act
+            // Assert
+        }
+        [Fact]
+        public void Count_returns_the_amount_of_nodes()
+        {
+            // Arrange
+            // Act
+            // Assert
         }
         [Fact]
         public void PreOrder_works()
