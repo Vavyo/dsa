@@ -13,6 +13,7 @@ namespace DataStructures.Trees
         public Tree(T rootValue)
         {
             Node<T> rootNode = new Node<T>(rootValue);
+            Root = rootNode;
         }
         public Tree() { }
 
