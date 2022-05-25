@@ -13,7 +13,7 @@ namespace DataStructures.Trees
         {
             Value = value;
         }
-        public void AddNode(Node<T> node)
+        public void AddSearchNode(Node<T> node)
         {
             if(node.Value.CompareTo(Value) < 0)
             {
@@ -23,7 +23,7 @@ namespace DataStructures.Trees
                 }
                 else
                 {
-                    Left.AddNode(node);
+                    Left.AddSearchNode(node);
                 }
             }
             else
@@ -34,7 +34,7 @@ namespace DataStructures.Trees
                 }
                 else
                 {
-                    Right.AddNode(node);
+                    Right.AddSearchNode(node);
                 }
             }
         }
