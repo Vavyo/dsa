@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DataStructures.Trees
 {
-    public class Node<T>
+    public class Node<T> where T : IComparable
     {
         public T Value { get; set; }
         public Node<T> Left { get; set; }
@@ -12,6 +12,31 @@ namespace DataStructures.Trees
         public Node(T value)
         {
             Value = value;
+        }
+        public void AddNode(Node<T> node)
+        {
+            if(node.Value.CompareTo(Value) < 0)
+            {
+                if (Left == null)
+                {
+                    Left = node;
+                }
+                else
+                {
+                    Left.AddNode(node);
+                }
+            }
+            else
+            {
+                if (Right == null)
+                {
+                    Right = node;
+                }
+                else
+                {
+                    Right.AddNode(node);
+                }
+            }
         }
             
     }
