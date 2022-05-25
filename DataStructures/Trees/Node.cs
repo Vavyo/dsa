@@ -40,7 +40,15 @@ namespace DataStructures.Trees
         }
         public void AddNode(Node<T> node)
         {
-            
+            Node<T> parent = FindEmptyNode();
+            if (parent.Left == null)
+            {
+                parent.Left = node;
+            }
+            else if(parent.Right == null)
+            {
+                parent.Right = node;
+            }
         }
         public Node<T> FindEmptyNode()
         {
