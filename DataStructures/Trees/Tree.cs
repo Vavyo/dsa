@@ -10,6 +10,14 @@ namespace DataStructures.Trees
         public Node<T> Left { get => Root.Left; set => Root.Left = value; }
         public Node<T> Right { get => Root.Right; set => Root.Right = value; }
 
+        public Tree(T rootValue)
+        {
+            Node<T> rootNode = new Node<T>(rootValue);
+        }
+        public Tree() { }
+
+
+
         public T[] PreOrder()
         {
             if (Root == null)
