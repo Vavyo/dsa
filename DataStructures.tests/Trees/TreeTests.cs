@@ -31,9 +31,12 @@ namespace DataStructures.tests.Trees
         [Fact]
         public void Can_instanciate_with_root()
         {
-            // Arrange
-            // Act
+            // Arrange/Act
+            Tree<int> tree = new Tree<int>(42);
             // Assert
+            Assert.NotNull(tree);
+            Assert.NotNull(tree.Root);
+            Assert.Equal(42, tree.Root.Value);
         }
         [Fact]
         public void Can_add_to_existing_node()
