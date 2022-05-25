@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DataStructures.Trees
 {
-    public class Tree<T>
+    public class Tree<T> where T : IComparable
     {
         public Node<T> Root { get; set; }
         public Node<T> Left { get => Root.Left; set => Root.Left = value; }
@@ -16,6 +16,11 @@ namespace DataStructures.Trees
         }
         public Tree() { }
 
+        public void AddValue(T value)
+        {
+            Node<T> node = new Node<T>(value);
+            
+        }
 
 
         public T[] PreOrder()
