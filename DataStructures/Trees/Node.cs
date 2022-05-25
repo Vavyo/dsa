@@ -42,6 +42,26 @@ namespace DataStructures.Trees
         {
             
         }
-        
+        public Node<T> FindEmptyNode()
+        {
+            if(Left == null || Right == null)
+            {
+                return this;
+            }
+            Queue<Node<T>> queue = new Queue<Node<T>>();
+            queue.Enqueue(Left);
+            queue.Enqueue(Right);
+            return queue.Dequeue().FindEmptyNode(queue);
+        }
+        public Node<T> FindEmptyNode(Queue<Node<T>> queue)
+        {
+            if (Left == null || Right == null)
+            {
+                return this;
+            }
+            queue.Enqueue(Left);
+            queue.Enqueue(Right);
+            return queue.Dequeue().FindEmptyNode(queue);
+        }
     }
 }
