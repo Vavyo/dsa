@@ -19,7 +19,14 @@ namespace DataStructures.Trees
         public void AddValue(T value)
         {
             Node<T> node = new Node<T>(value);
-            
+            if(Root == null)
+            {
+                Root = node;
+            }
+            else
+            {
+                Root.AddNode(node);
+            }
         }
 
 
