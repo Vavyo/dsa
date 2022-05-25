@@ -9,6 +9,14 @@ namespace DataStructures.tests.Trees
     public class TreeTests
     {
         [Fact]
+        public void Can_instanciate()
+        {
+            // Arrange/Act
+            Tree<int> tree = new Tree<int>();
+            // Assert
+            Assert.NotNull(tree);
+        }
+        [Fact]
         public void PreOrder_works()
         {
             // Arrange
