@@ -42,15 +42,24 @@ namespace DataStructures.tests.Trees
         public void Can_add_to_existing_node()
         {
             // Arrange
+            Tree<int> tree = new Tree<int>(42);
             // Act
+            tree.AddValue(2);
             // Assert
+            Assert.NotNull(tree.Left);
         }
         [Fact]
         public void Count_returns_the_amount_of_nodes()
         {
             // Arrange
+            Tree<int> tree = new Tree<int>(42);
             // Act
+            tree.AddValue(2);
+            tree.AddValue(3);
+            tree.AddValue(4);
+            int count = tree.Count();
             // Assert
+            Assert.Equal(4, count);
         }
         [Fact]
         public void PreOrder_works()
