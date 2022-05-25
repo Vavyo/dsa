@@ -13,6 +13,7 @@ namespace DataStructures.Trees
         {
             Value = value;
         }
+        // Adds a node using a binary search tree sorting
         public void AddSearchNode(Node<T> node)
         {
             if(node.Value.CompareTo(Value) < 0)
@@ -38,6 +39,7 @@ namespace DataStructures.Trees
                 }
             }
         }
+        // Uses FindEmptyNode() to find the first empty node and then adds the new node to it
         public void AddNode(Node<T> node)
         {
             Node<T> parent = FindEmptyNode();
@@ -50,6 +52,7 @@ namespace DataStructures.Trees
                 parent.Right = node;
             }
         }
+        // Performs a depth first traversal to find the first empty node and returns it
         public Node<T> FindEmptyNode()
         {
             if(Left == null || Right == null)
@@ -61,6 +64,7 @@ namespace DataStructures.Trees
             queue.Enqueue(Right);
             return queue.Dequeue().FindEmptyNode(queue);
         }
+        // Helper method for the traversal.
         public Node<T> FindEmptyNode(Queue<Node<T>> queue)
         {
             if (Left == null || Right == null)
