@@ -38,6 +38,10 @@ namespace DataStructures.Trees
                 }
             }
         }
+        public void AddNode(Node<T> node)
+        {
             
+        }
+        
     }
 }
