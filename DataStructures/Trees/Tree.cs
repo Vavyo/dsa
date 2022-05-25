@@ -41,7 +41,10 @@ namespace DataStructures.Trees
         // Returns the number of nodes in the tree.
         public int Count()
         {
-            return 0;
+            Queue<T> result = new Queue<T>();
+            PreOrder(Root, result);
+
+            return result.Count;
         }
     }
 }
