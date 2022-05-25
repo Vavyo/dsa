@@ -38,5 +38,10 @@ namespace DataStructures.Trees
             }
             
         }
+        // Returns the number of nodes in the tree.
+        public int Count()
+        {
+            return 0;
+        }
     }
 }
