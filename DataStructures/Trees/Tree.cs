@@ -16,7 +16,7 @@ namespace DataStructures.Trees
         }
         public Tree() { }
 
-        public void AddValue(T value)
+        virtual public void AddValue(T value)
         {
             Node<T> node = new Node<T>(value);
             if(Root == null)

@@ -6,7 +6,7 @@ namespace DataStructures.Trees
 {
     public class BinarySearchTree<T> : Tree<T> where T : IComparable
     {
-        public void AddNode(T value)
+        override public void AddValue(T value)
         {
             Node<T> node = new Node<T>(value);
             if(Root == null)
