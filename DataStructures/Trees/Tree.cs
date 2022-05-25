@@ -20,8 +20,6 @@ namespace DataStructures.Trees
 
         public T[] PreOrder()
         {
-            if (Root == null)
-                throw new InvalidOperationException("Tree is empty");
             Queue<T> result = new Queue<T>();
             PreOrder(Root, result);
             T[] arr = new T[result.Count];
